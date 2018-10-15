@@ -70,7 +70,11 @@ clf_g = sklearn.ensemble.GradientBoostingClassifier(n_estimators=50)
 clf_d = sklearn.tree.DecisionTreeClassifier(max_depth=10)
 lo_model = LogisticRegression()
 
-
+#grid search CV tuning最优参数
+#parameters = [max_depth=3, eta = 0.1, gamma = 0, n_estimators=400]
+#clf = grid_search.GridSearchCV(clf_x, parameters)
+#clf.fit(X_train,y_train.values.ravel())
+#tuning 不同的模型
 clf_x = XGBClassifier(max_depth = 6, gamma = 0.01)
 clf_x1 = XGBClassifier(max_depth=3, eta = 0.1, gamma = 0, n_estimators=160)
 clf_x2 = XGBClassifier(max_depth=5, n_estimators=300, eta=0.05)
